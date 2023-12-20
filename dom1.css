@@ -1,72 +1,108 @@
-
-header{
-    background-color: pink;
-    padding: 1.5rem;
+header {
+  background-color: pink;
+  padding: 1.5rem;
 }
-section{
-    margin: 2rem;
-    border: 1px solid black;
-    padding: 2rem;
+section {
+  margin: 2rem;
+  border: 1px solid black;
+  padding: 2rem;
 }
-ul{
-    /* border: 1px solid black; */
-    padding: 1rem;
-    list-style: none;
-}
-
-ul li{
-    border: 1px solid black;
-    padding: 1rem;
-    
-}
-h1{
-    display: inline;
+ul {
+  /* border: 1px solid black; */
+  padding: 1rem;
+  list-style: none;
 }
 
-.filterForm{
-    float: right;
+ul li {
+  border: 1px solid black;
+  padding: 1rem;
+}
+h1 {
+  display: inline;
+}
 
+.filterForm {
+  float: right;
 }
 
 input {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }
 
-.btn{
-    padding-left:1.5rem;
-    padding-right:1.5rem ;
+.btn {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.delete{
-    float: right;
+.delete {
+  background-color: red;
+  color: white;
+  float: right;
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
+.update {
+  float: right;
+  margin-right: 0.5rem;
+  padding: 0.3rem;
+}
+.done {
+  float: right;
+  margin-right: 0.5rem;
+  padding: 0.3rem;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    display: block;
+  }
+
+  .filterForm {
+    float: none;
+  }
+  header {
+    text-align: center;
+  }
+  section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  section {
+    margin: 0;
+    margin-top: 1rem;
+    border: 1px solid black;
+    padding: 1rem;
+  }
+  section input {
+    margin-top: 2%;
+  }
+}
+
+@media (max-width: 340px) {
+  ul li {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  .delete {
     background-color: red;
     color: white;
-    padding: 0.4rem;
-    margin-top: -1%;
-    
-}
+    float: none;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  }
 
-@media (max-width : 480px){
-    h1{
-        display: block;
-    }
-    
-    .filterForm{
-        float: none;
-    
-    }
-    header{
-        text-align: center;
-    }
-    section form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    section{
-        margin: 0;
-        margin-top: 1rem;
-        border: 1px solid black;
-        padding: 1rem;
-    }
+  .update {
+    float: none;
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+  }
+  .done {
+    float: none;
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+  }
 }

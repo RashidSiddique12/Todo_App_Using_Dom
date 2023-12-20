@@ -59,11 +59,23 @@ const addElement = (e) => {
   newli.className = "list-group";
   newli.appendChild(document.createTextNode(input));
   // create button
-  const button = document.createElement("button");
-  button.className = "delete";
-  button.appendChild(document.createTextNode("X"));
+  const deletebutton = document.createElement("button");
+  deletebutton.className = "delete";
+  deletebutton.appendChild(document.createTextNode("X"));
+  newli.appendChild(deletebutton);
 
-  newli.appendChild(button);
+  //create update button
+  const updatebutton = document.createElement("button");
+  updatebutton.className = "update";
+  updatebutton.appendChild(document.createTextNode("Update"));
+  newli.appendChild(updatebutton);
+
+  //done button
+  const donebutton = document.createElement("button");
+  donebutton.className = "done";
+  donebutton.appendChild(document.createTextNode("Done"));
+  newli.appendChild(donebutton);
+
   const ul = document.getElementById("lists");
 
   ul.appendChild(newli);
@@ -86,27 +98,50 @@ const deletelist = (e) => {
 const lists = document.getElementById("lists");
 lists.addEventListener("click", deletelist);
 
-
 // search or filter from the list
 
-const searchitem = (e)=>{
-    const search = e.target.value.toLowerCase();
-    const items = document.getElementsByTagName('li');
-    Array.from(items).forEach((item)=>{
-        const itemContent = item.firstChild.textContent.toLowerCase();
-        if(itemContent.indexOf(search) != -1){
-            item.style.display = 'block';
-        }
-        else{
-            item.style.display='none'
-        }
-    })
+const searchitem = (e) => {
+  const search = e.target.value.toLowerCase();
+  const items = document.getElementsByTagName("li");
+  Array.from(items).forEach((item) => {
+    const itemContent = item.firstChild.textContent.toLowerCase();
+    if (itemContent.indexOf(search) != -1) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+};
 
+const search = document.getElementById("search");
+search.addEventListener("keyup", searchitem);
+
+/////uppdate
+
+const updateList = (e) => {
+  if (e.target.classList.contains("update")) {
+    const update = e.target.parentElement.firstChild.textContent.trim();
+    let newdata = "";
+    confirm((newdata = prompt(`Update ${update}`)));
+    if (newdata != "") {
+      e.target.parentElement.firstChild.textContent = newdata;
+    }
+  }
+};
+// const listss = document.getElementById("lists");
+lists.addEventListener("click", updateList);
+
+//done
+
+const done =(e)=>{
+    if(e.target.classList.contains('done')){
+        e.target.parentElement.style.backgroundColor ="blue";
+       e.target.parentElement.style.textDecoration = "line-through";
+       e.target.parentElement.children[2].style.backgroundColor = "green"
+       e.target.parentElement.children[2].style.color = "white"
+    }
 }
 
-const search = document.getElementById('search');
-search.addEventListener('keyup', searchitem)
+lists.addEventListener('click', done)
 
 
-
-/////modify styling
