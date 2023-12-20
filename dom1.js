@@ -123,7 +123,7 @@ const updateList = (e) => {
     const update = e.target.parentElement.firstChild.textContent.trim();
     let newdata = "";
     confirm((newdata = prompt(`Update ${update}`)));
-    if (newdata != "") {
+    if (newdata != "" && newdata != null) {
       e.target.parentElement.firstChild.textContent = newdata;
     }
   }
@@ -138,10 +138,25 @@ const done =(e)=>{
         e.target.parentElement.style.backgroundColor ="blue";
        e.target.parentElement.style.textDecoration = "line-through";
        e.target.parentElement.children[2].style.backgroundColor = "green"
-       e.target.parentElement.children[2].style.color = "white"
+       e.target.parentElement.children[2].style.color = "white";
+       e.target.parentElement.children[2].textContent = "Undone";
+       e.target.parentElement.children[2].className = "undone";
     }
 }
 
 lists.addEventListener('click', done)
 
 
+//undone
+
+const undone = (e)=>{
+    if(e.target.classList.contains('undone')){
+        e.target.parentElement.children[2].textContent = "done";
+        e.target.parentElement.children[2].style.backgroundColor ="white";
+        e.target.parentElement.children[2].style.color ="black";
+        e.target.parentElement.style.backgroundColor ="green";
+        e.target.parentElement.style.textDecoration ="none";
+    }
+}
+
+lists.addEventListener('dblclick', undone);

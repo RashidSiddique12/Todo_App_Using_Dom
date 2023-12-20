@@ -47,11 +47,12 @@ input {
   margin-right: 0.5rem;
   padding: 0.3rem;
 }
-.done {
+.done,.undone {
   float: right;
   margin-right: 0.5rem;
   padding: 0.3rem;
 }
+
 
 @media (max-width: 480px) {
   h1 {
@@ -100,9 +101,11 @@ input {
     margin-right: 0.5rem;
     padding: 0.3rem;
   }
-  .done {
+  .done, .undone {
     float: none;
     margin-right: 0.5rem;
     padding: 0.3rem;
   }
+
+ 
 }
