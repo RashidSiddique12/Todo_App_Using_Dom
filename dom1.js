@@ -156,6 +156,9 @@ const undone = (e)=>{
         e.target.parentElement.children[2].style.color ="black";
         e.target.parentElement.style.backgroundColor ="green";
         e.target.parentElement.style.textDecoration ="none";
+        e.target.parentElement.children[2].className = "done";
+        
+
     }
 }
 
