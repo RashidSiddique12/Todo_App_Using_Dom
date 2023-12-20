@@ -1,0 +1,72 @@
+
+header{
+    background-color: pink;
+    padding: 1.5rem;
+}
+section{
+    margin: 2rem;
+    border: 1px solid black;
+    padding: 2rem;
+}
+ul{
+    /* border: 1px solid black; */
+    padding: 1rem;
+    list-style: none;
+}
+
+ul li{
+    border: 1px solid black;
+    padding: 1rem;
+    
+}
+h1{
+    display: inline;
+}
+
+.filterForm{
+    float: right;
+
+}
+
+input {
+    padding: 0.3rem;
+}
+
+.btn{
+    padding-left:1.5rem;
+    padding-right:1.5rem ;
+}
+
+.delete{
+    float: right;
+    background-color: red;
+    color: white;
+    padding: 0.4rem;
+    margin-top: -1%;
+    
+}
+
+@media (max-width : 480px){
+    h1{
+        display: block;
+    }
+    
+    .filterForm{
+        float: none;
+    
+    }
+    header{
+        text-align: center;
+    }
+    section form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    section{
+        margin: 0;
+        margin-top: 1rem;
+        border: 1px solid black;
+        padding: 1rem;
+    }
+}
